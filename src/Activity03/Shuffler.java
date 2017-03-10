@@ -51,16 +51,21 @@ public class Shuffler {
 	 */
 	public static void perfectShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
-                int[] shuffled = new int[52];
+                int[] shuffled = new int[values.length];
                 int k = 0;
-                for (int j = 0; j < 25; j++){
+                for (int j = 0; j < values.length/2; j++){
                     shuffled[k] = values[j];
                     k += 2;
                 }
                 k = 1;
-                for (int j = 26; j < 51; j++){
+                for (int j = values.length/2; j < values.length; j++){
                     shuffled[k] = values[j];
                     k += 2;
+                }
+                
+                //set original arry to values
+                for (int i = 0; i < shuffled.length; i++) {
+                    values[i] = shuffled[i];
                 }
 	}
 
